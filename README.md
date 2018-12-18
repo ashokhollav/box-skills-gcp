@@ -1,10 +1,36 @@
 This guide demonstrates how to build a Box Skill application in Node.js using Serverless, a command line tool for building and deploying applications to serverless architectures, and the Box Skills Kit, a library for interacting with the Box API and integrate it with AI/ML services from Google Cloud !
 
-Please follow the instructions in https://github.com/box/box-skills-kit-nodejs/tree/master/boilerplate-skills to deploy a Google cloud function using Serverless !. You can also follow instructions @ https://cloud.google.com/functions/getting-started/ to using google native tools.
+**Setup**
+* Follow instructions at https://serverless.com/framework/docs/providers/google/guide/installation/ to install serverless
+* Follow instructions at https://serverless.com/framework/docs/providers/google/guide/credentials/ to create Google Cloud Service account and to give appropriate privileges to the service account.
+* Download the private-key json file from Google Cloud and save it at secure location on your workstation.
+* Clone the repo
+```
+      git clone https://github.com/ashokhollav/box-skills-gcp
+```
+* Edit the serverless.yml 
+      * change the project_id
+      * change the location to your private key downloaded earlier
+* Install the dependencies
+```
+npm install --save
 
-Things to note: 
+```
+* Deploy the function to Google Cloud
+```
+      serverless deploy
+```
+      
+You can also follow instructions @ https://cloud.google.com/functions/getting-started/ to using google native tools.
+
+* Follow instructions at https://developer.box.com/docs/build-a-box-skill and at https://developer.box.com/docs/configure-a-box-skill to build a Box skill app using Box's developer console and enable it using Admin Console.
+* Ensure when you configure the app , you have the Google Cloud function endpoint URL at hand
+* Download the skills-kit library from https://github.com/box/box-skills-kit-nodejs/tree/master/skills-kit-library and save it to "library" folder in your current directory
+
+**Things to note**: 
       1. Please ensure you replace the serverless.yml in the instructions above with the yaml file from this repo.
       2. Google cloud functions automatically parses JSON string to objects, you may have to edit the line 131 in the skills-kit library from 
+      
         function FilesReader(body) {
           const eventBody = JSON.parse(body);
           ....
@@ -17,11 +43,11 @@ Things to note:
       }
       
       
-Setup on Google Cloud:
+**Setup on Google Cloud :**
 Please follow instructions at https://cloud.google.com/vision/product-search/docs/quickstart to setup product search catalog.
 Ensure you have a project in GCP and billing enabled !. 
 
-About Product Search
+**About Product Search:**
 
 Cloud Vision Product Search allows retailers to create a set of products, each containing reference images that visually describe the product from a set of viewpoints. Currently Vision API Product Search supports the following product categories: homegoods, apparel, and toys.
 
@@ -31,6 +57,10 @@ The quickstart demonstrates how to create a product set which contains a group o
 
 We will use Product search api's within our cloud function, which gets triggered when a file is uploaded into Box.
 
-The use case is: You, a retailer, use Box for storing all your product  related data such as images. There are a lot of images to organize and you need a quick way to not only organize these datasets but also find out similar products, the max price of such products and other information.
+**Use case is:**
+You, a retailer, use Box for storing all your product  related data such as images. There are a lot of images to organize and you need a quick way to not only organize these datasets but also find out similar products, the max price of such products and other information.
 You choose to create a ML powered product catalog in Google Cloud, which allows you to query visually and semantically similar items. Once you upload the data into Box, the custom skill that you've built will call the Google Cloud Product Search api - the catalog for which you;ve built already - The API returns similar product in your catalog and the category, price information.
+
+**Workflow **
+
 
