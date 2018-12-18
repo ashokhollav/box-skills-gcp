@@ -73,4 +73,4 @@ You choose to create a ML powered product catalog in Google Cloud, which allows 
 * You open the image in Box drive and cick in the "skills" menu (a wand like icon on the right)
 * Product catalog information, with similar products and max price is populated - powered by Cloud Vision Product Search API from Google
 
-
+![Alt text](sample.jpg?raw=true "Box Skills view, similar products")
