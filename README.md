@@ -1,6 +1,8 @@
 This guide demonstrates how to build a Box Skill application in Node.js using Serverless, a command line tool for building and deploying applications to serverless architectures, and the Box Skills Kit, a library for interacting with the Box API and integrate it with AI/ML services from Google Cloud !
 
 **Setup**
+
+* Please follow instructions at https://cloud.google.com/vision/product-search/docs/quickstart to setup product search catalog on Google Cloud. Ensure you have a project in GCP and billing enabled !. 
 * Follow instructions at https://serverless.com/framework/docs/providers/google/guide/installation/ to install serverless
 * Follow instructions at https://serverless.com/framework/docs/providers/google/guide/credentials/ to create Google Cloud Service account and to give appropriate privileges to the service account.
 * Download the private-key json file from Google Cloud and save it at secure location on your workstation.
@@ -42,10 +44,7 @@ You can also follow instructions @ https://cloud.google.com/functions/getting-st
         ....
       }
       
-      
-**Setup on Google Cloud :**
-Please follow instructions at https://cloud.google.com/vision/product-search/docs/quickstart to setup product search catalog.
-Ensure you have a project in GCP and billing enabled !. 
+
 
 **About Product Search:**
 
