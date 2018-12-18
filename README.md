@@ -15,7 +15,7 @@ This guide demonstrates how to build a Box Skill application in Node.js using Se
       * change the location to your private key downloaded earlier
 * Install the dependencies
 ```
-npm install --save
+      npm install --save
 
 ```
 * Deploy the function to Google Cloud
@@ -32,18 +32,20 @@ You can also follow instructions @ https://cloud.google.com/functions/getting-st
 **Things to note**: 
       1. Please ensure you replace the serverless.yml in the instructions above with the yaml file from this repo.
       2. Google cloud functions automatically parses JSON string to objects, you may have to edit the line 131 in the skills-kit library from 
-      
+ ```javascript
+ 
         function FilesReader(body) {
           const eventBody = JSON.parse(body);
           ....
       }
     
     to 
+ 
       function FilesReader(body) {
         const eventBody =body;
         ....
       }
-      
+  ```
 
 
 **About Product Search:**
