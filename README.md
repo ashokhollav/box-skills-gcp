@@ -31,15 +31,15 @@ You can also follow instructions @ https://cloud.google.com/functions/getting-st
 
 **Things to note**: 
       1. Please ensure you replace the serverless.yml in the instructions above with the yaml file from this repo.
-      2. Google cloud functions automatically parses JSON string to objects, you may have to edit the line 131 in the skills-kit library from 
+      2. You receive a JSON object instead of JSON string from Box to your Google cloud function, hence you will have to edit the line 131 in the skills-kit library 
  ```javascript
- 
+ from 
         function FilesReader(body) {
           const eventBody = JSON.parse(body);
           ....
       }
     
-    to 
+ to 
  
       function FilesReader(body) {
         const eventBody =body;
