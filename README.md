@@ -76,3 +76,6 @@ You choose to create a ML powered product catalog in Google Cloud, which allows 
 * Product catalog information, with similar products and max price is populated - powered by Cloud Vision Product Search API from Google
 
 ![Alt text](sample.png?raw=true "Box Skills view, similar products")
+
+## License
+This project is licensed under the [Apache 2.0 License](LICENSE.txt)
