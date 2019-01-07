@@ -1,6 +1,6 @@
 This guide demonstrates how to build a Box Skill application in Node.js using Serverless, a command line tool for building and deploying applications to serverless architectures, and the Box Skills Kit, a library for interacting with the Box API and integrate it with AI/ML services from Google Cloud !
 
-**Setup**
+## Setup
 
 * Please follow instructions at https://cloud.google.com/vision/product-search/docs/quickstart to setup product search catalog on Google Cloud. Ensure you have a project in GCP and billing enabled !. 
 * Follow instructions at https://serverless.com/framework/docs/providers/google/guide/installation/ to install serverless
@@ -48,7 +48,7 @@ You can also follow instructions @ https://cloud.google.com/functions/getting-st
   ```
 
 
-**About Product Search:**
+## Google Cloud Vision Product Search:
 
 Cloud Vision Product Search allows retailers to create a set of products, each containing reference images that visually describe the product from a set of viewpoints. Currently Vision API Product Search supports the following product categories: homegoods, apparel, and toys.
 
@@ -58,11 +58,11 @@ The quickstart demonstrates how to create a product set which contains a group o
 
 We will use Product search api's within our cloud function, which gets triggered when a file is uploaded into Box.
 
-**Use case:**
+## Use case:
 You, a retailer, use Box for storing all your product  related data such as images. There are a lot of images to organize and you need a quick way to not only organize these datasets but also find out similar products, the max price of such products and other information.
 You choose to create a ML powered product catalog in Google Cloud, which allows you to query visually and semantically similar items. Once you upload the data into Box, the custom skill that you've built will call the Google Cloud Product Search api - the catalog for which you;ve built already - The API returns similar product in your catalog and the category, price information.
 
-**Workflow**
+## Workflow
 * Upload an image file that represents a product, in this demo we use the one of the images from gs://cloud-ai-vision-data/product-search-tutorial/images/ or a similar image sourced from the internet into your Box drive
 * The upload triggers a Box skill event workflow, this calls the Google cloud function previously deployed and configured in Box Admin Console.
 * The Cloud Function does the following
