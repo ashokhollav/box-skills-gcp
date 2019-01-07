@@ -63,7 +63,7 @@ You, a retailer, use Box for storing all your product  related data such as imag
 You choose to create a ML powered product catalog in Google Cloud, which allows you to query visually and semantically similar items. Once you upload the data into Box, the custom skill that you've built will call the Google Cloud Product Search api - the catalog for which you;ve built already - The API returns similar product in your catalog and the category, price information.
 
 **Workflow**
-* Upload a image file that represents a product, in this demo we use the one of the images from gs://cloud-ai-vision-data/product-search-tutorial/images/ or a similar image sourced from the internet into your Box drive
+* Upload an image file that represents a product, in this demo we use the one of the images from gs://cloud-ai-vision-data/product-search-tutorial/images/ or a similar image sourced from the internet into your Box drive
 * The upload triggers a Box skill event workflow, this calls the Google cloud function previously deployed and configured in Box Admin Console.
 * The Cloud Function does the following
   * Use the Box skills kit's FileReader api to read the base64 encoded image string
@@ -72,7 +72,7 @@ You choose to create a ML powered product catalog in Google Cloud, which allows 
   * Create a Faces card to create an icon based on the image
   * Persist the skills card with Box using skillswriter api.
       
-* You open the image in Box drive and cick in the "skills" menu (a wand like icon on the right)
+* You open the image in Box drive and click on the "skills" menu (a wand like icon on the right)
 * Product catalog information, with similar products and max price is populated - powered by Cloud Vision Product Search API from Google
 
 ![Alt text](sample.png?raw=true "Box Skills view, similar products")
