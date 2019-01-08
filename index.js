@@ -23,10 +23,12 @@ exports.skills = async (event, context, callback) => {
     const productSearchClient = new vision.ProductSearchClient();
     const imageAnnotatorClient = new vision.ImageAnnotatorClient();
 
+    // update your project specific details here
+    
     const productSetPath = productSearchClient.productSetPath(
-        'box-skills-gcp',
-        'us-east1',
-        'product_set1'
+        '<your-project-id>',
+        '<us-east1>',
+        '<product_set1>'
         );
 
     await skillsWriter.saveProcessingCard();
@@ -72,13 +74,40 @@ exports.skills = async (event, context, callback) => {
 
           const results = response['responses'][0]['productSearchResults']['results'];
 
-          console.log(results);
+          //console.log(results);
           
           listOfDiscoveredKeywords = new Array();
 
 
           price=0.0;
           results.forEach(result => {
+
+            if( parseFloat(result['score']) < 0.6 ) {
+                return;
+            }
+            /*
+            console.log(result['score']);
+            console.log(result['image']);
+
+            const referenceImageId = result['image'];
+            const formattedName = client.referenceImagePath(
+                                  '<PROJECT-ID>',
+                                    'us-east1',
+                                    'product_set1',
+                                  referenceImageId
+                                );
+            const refImageRequest = {
+            name: formattedName,
+            };
+            
+            const refImageResponse = await client.getReferenceImage(refImageRequest);
+            const image = refImageResponse.uri;
+            var fs = require('fs');
+            var imageFile = fs.readFileSync(image);
+            var encoded = Buffer.from(imageFile).toString('base64');
+            */
+
+
             product_name=result['product'].name.split('/').pop(-1);
             productCategory = result['product'].productCategory;
 
