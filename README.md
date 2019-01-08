@@ -11,8 +11,11 @@ This guide demonstrates how to build a Box Skill application in Node.js using Se
       git clone https://github.com/ashokhollav/sample-google-product-search-integration
 ```
 * Edit the serverless.yml 
-      * change the project_id
-      * change the location to your private key downloaded earlier
+  * change the project_id
+  * change the location to your private key downloaded earlier
+* Edit the index.js file
+  * update the code to reflect your project specific details in the parameters being passed for     productSearchClient.productSetPath(..)
+* Download the skills-kit library from https://github.com/box/box-skills-kit-nodejs/tree/master/skills-kit-library and save it to "library" folder in your current directory. See [Things to Note](#Things-to-note) below for edits you need to make to this library
 * Install the dependencies
 ```
       npm install --save
@@ -27,11 +30,11 @@ You can also follow instructions @ https://cloud.google.com/functions/getting-st
 
 * Follow instructions at https://developer.box.com/docs/build-a-box-skill and at https://developer.box.com/docs/configure-a-box-skill to build a Box skill app using Box's developer console and enable it using Admin Console.
 * Ensure when you configure the app , you have the Google Cloud function endpoint URL at hand
-* Download the skills-kit library from https://github.com/box/box-skills-kit-nodejs/tree/master/skills-kit-library and save it to "library" folder in your current directory
 
-**Things to note**: 
-      1. Please ensure you replace the serverless.yml in the instructions above with the yaml file from this repo.
-      2. You receive a JSON object instead of JSON string from Box to your Google cloud function, hence you will have to edit the line 131 in the skills-kit library 
+### Things to note:
+* Please ensure you replace the serverless.yml in the instructions above with the yaml file from this repo.
+* You receive a JSON object instead of JSON string from Box to your Google cloud function, hence you will have to edit the line 131 in the skills-kit library 
+      
  ```javascript
  from 
         function FilesReader(body) {
