@@ -8,7 +8,7 @@ This guide demonstrates how to build a Box Skill application in Node.js using Se
 * Download the private-key json file from Google Cloud and save it at secure location on your workstation.
 * Clone the repo
 ```
-      git clone https://github.com/ashokhollav/box-skills-gcp
+      git clone https://github.com/ashokhollav/sample-google-product-search-integration
 ```
 * Edit the serverless.yml 
       * change the project_id
