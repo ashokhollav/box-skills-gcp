@@ -11,11 +11,10 @@ This guide demonstrates how to build a Box Skill application in Node.js using Se
       git clone https://github.com/ashokhollav/sample-google-product-search-integration
 ```
 * Edit the serverless.yml 
-  * change the project_id
-  * change the location to your private key downloaded earlier
+  * update the project_id
+  * update the location of your private key, downloaded earlier
 * Edit the index.js file
   * update the code to reflect your project specific details in the parameters being passed for     productSearchClient.productSetPath(..)
-* Download the skills-kit library from https://github.com/box/box-skills-kit-nodejs/tree/master/skills-kit-library and save it to "library" folder in your current directory. See [Things to Note](#Things-to-note) below for edits you need to make to this library
 * Install the dependencies
 ```
       npm install --save
@@ -26,14 +25,14 @@ This guide demonstrates how to build a Box Skill application in Node.js using Se
       serverless deploy
 ```
       
-You can also follow instructions @ https://cloud.google.com/functions/getting-started/ to using google native tools.
+You can also follow instructions @ https://cloud.google.com/functions/getting-started/ to use google native tools.
 
 * Follow instructions at https://developer.box.com/docs/build-a-box-skill and at https://developer.box.com/docs/configure-a-box-skill to build a Box skill app using Box's developer console and enable it using Admin Console.
 * Ensure when you configure the app , you have the Google Cloud function endpoint URL at hand
 
 ### Things to note:
-* Please ensure you replace the serverless.yml in the instructions above with the yaml file from this repo.
-* You receive a JSON object instead of JSON string from Box to your Google cloud function, hence you will have to edit the line 131 in the skills-kit library 
+* If downloading the skills-kit library from https://github.com/box/box-skills-kit-nodejs/tree/master/skills-kit-library then replace the skills-kits-2.0.js in the library directory and make the following changes
+  * You receive a JSON object instead of JSON string from Box to your Google cloud function, hence you will have to edit the line 131 in the skills-kit library 
       
  ```javascript
  from 
