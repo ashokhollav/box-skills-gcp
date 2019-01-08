@@ -32,8 +32,8 @@ You can also follow instructions @ https://cloud.google.com/functions/getting-st
 * Ensure when you configure the app , you have the Google Cloud function endpoint URL at hand
 
 ### Things to note:
-      * Please ensure you replace the serverless.yml in the instructions above with the yaml file from this repo.
-      * You receive a JSON object instead of JSON string from Box to your Google cloud function, hence you will have to edit the line 131 in the skills-kit library 
+* Please ensure you replace the serverless.yml in the instructions above with the yaml file from this repo.
+* You receive a JSON object instead of JSON string from Box to your Google cloud function, hence you will have to edit the line 131 in the skills-kit library 
       
  ```javascript
  from 
